@@ -1,0 +1,52 @@
+h1{
+    color: blue;
+}
+
+table {
+    margin: 10px;
+}
+/* classe */
+.buttonsDiv{
+    margin: 10px;
+}
+
+/* id */
+#buttonGreen{
+    background-color: green;
+    color: white;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-color: darkgreen;
+    width: 100px;
+    height: 30px;
+}
+
+#buttonRed{
+    background-color: red;
+    color: white;
+    border: 5dp;
+    border-bottom-color: brown;
+    width: 100px;
+    height: 30px;
+}
+
+input[type=password]{
+    background-color: aquamarine;
+}
+
+img{
+    display: inline;
+    width: 100px;
+    height: auto;
+    margin: 2px;
+}
+
+div{
+    text-align: center;
+}
+
+@media screen and (max-width:1000px){
+    body{
+        background-color: wheat;
+    }
+}

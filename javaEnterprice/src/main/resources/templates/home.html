@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Produttore</th>
+        <th>Modello</th>
+        <th>Cilindrata</th>
+    </tr>
+    <tr th:each="auto : ${autos}">
+        <td th:text="${auto.produttore}"></td>
+        <td th:text="${auto.modello}"></td>
+        <td th:text="${auto.cilindrata}"></td>
+    </tr>
+</table>
+</body>
+</html>

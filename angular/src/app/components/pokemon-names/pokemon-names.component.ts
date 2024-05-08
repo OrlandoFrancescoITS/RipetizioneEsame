@@ -10,13 +10,15 @@ import { PokemonNames } from '../../interfaces/pokemon-names';
 export class PokemonNamesComponent {
 
   pokemon_names : PokemonNames[] = []
+  pokemon_names_strings : string[] = []
   constructor(private pokemon_service : PokemonService) { }
 
   getPokemonList( ) {
     this.pokemon_service.getPokemonNames().subscribe( r => {
 
       r.results.forEach(element => {
-        console.log(element.name)
+        // console.log(element.name)
+        this.pokemon_names_strings.push(element.name)
       });
       
     })

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function submitClick(){
+            let nome = document.getElementById("nome").value;
+            let cognome = document.getElementById("cognome").value;
+            let sesso = document.getElementsByName("sesso");
+            let atenei = document.getElementById("atenei"); 
+            let lavoratore = document.getElementById("lavoratore");
+            let descrizioneLavoro = document.getElementsByName("descrizioneLavoro");
+
+            if(nome == ""){
+                alert("Il nome non può vuoto")
+            }
+
+            if(cognome == ""){
+                alert("Il cognome non può vuoto")
+            }
+
+            for(let i = 0; i < sesso.length; i++){
+                if(sesso[i].checked){
+                    break;
+                }
+                if(i == sesso.length - 1){
+                    alert("Seleziona un sesso")
+                }
+            }
+
+            if(atenei.selectedIndex == 0){
+                alert("Seleziona un ateneo")
+            }
+
+            if(lavoratore.checked){
+                if(descrizioneLavoro[0].value == ""){
+                    alert("Inserisci una descrizione del lavoro")
+                }
+            }   
+        }
+
+        function capOnChange(){
+            let cap = document.getElementById("CAP").value;
+            if (cap.length >= 5){
+                alert("Cap errato")
+            }
+        }
+
+        function descrizioneLavoroOnChange(){
+            let descrizioneLavoro = document.getElementsByName("descrizioneLavoro").value;
+            if(descrizioneLavoro.length >= 80){
+                alert("Descrizione lavoro troppo lunga")
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome">
+        <br>
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome">
+        <br>
+        <label for="sesso">Sesso</label>
+        <input type="radio" name="sesso" value="M">Maschio
+        <input type="radio" name="sesso" value="F">Femmina
+        <br>
+        <label for="atenei">Ateneo</label>
+        <select id="atenei">
+            <option selected hidden>Seleziona un ateneo</option>
+            <option>uni 1</option>
+            <option>uni 2</option>
+            <option>uni 3</option>
+        </select>
+        <br>
+        <label for="CAP" >CAP</label>
+        <input type="text" id="CAP" onchange="capOnChange()">
+        <br>
+        <label for="lavoratore">Studente lavoratore</label>
+        <input type="checkbox" id="lavoratore">
+        <br>
+        <label for="descrizioneLavoro"></label>
+        <textarea name="descrizioneLavoro" maxlength="80" style="display: block;"></textarea>
+        <br>
+        <input type="submit" onclick="submitClick()">
+        <input type="reset">
+    </form>
+</body>
+</html>
